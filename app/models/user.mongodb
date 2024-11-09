@@ -1,0 +1,16 @@
+use('blue_lotus')
+db.ususarios.insertOne({
+    "nome": "Maria",
+    "sobrenome": "Almeida",
+    "email": "mariajose@gmail.com",
+    "telefone": "1112345678",
+    "senha": "mudar123",
+    "data_nasc": "11/05/2002",
+    "genero": "Femino"
+})
+
+//criando um índice único
+use('blue_lotus')
+db.usuarios.createIndex({'email':1},{unique:true})
+use('blue_lotus')
+db.usuarios.find({},{senha:0})
